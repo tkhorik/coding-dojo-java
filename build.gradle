@@ -14,7 +14,7 @@ dependencies {
 
 buildscript {
     ext.junitVersion = "5.8.1"
-    ext.mockitoVersion = '4.0.0'
+    ext.mockitoVersion = "4.0.0"
 
     repositories {
         mavenCentral()
