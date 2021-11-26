@@ -16,7 +16,11 @@ public class HelloWorldShould {
 
     @Test
     void returnHelloWorld() {
-        assertEquals("Hello World", helloWorld.helloWorld());
+        final var expected = "Hello World";
+
+        final var actual = helloWorld.helloWorld();
+
+        assertEquals(expected, actual);
     }
 
 }
