@@ -9,8 +9,8 @@ repositories {
     mavenCentral()
 }
 
-val junitVersion = "5.8.1"
-val mockitoVersion = "4.0.0"
+val junitVersion = "5.8.2"
+val mockitoVersion = "4.2.0"
 
 dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter-api:$junitVersion")
