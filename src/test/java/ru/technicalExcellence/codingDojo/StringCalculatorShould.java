@@ -8,13 +8,22 @@ import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class HelloWorldShould {
+public class StringCalculatorShould {
 
-    private HelloWorld helloWorld;
+    private StringCalculator stringCalculator;
+
+    public static Stream<Arguments> stringProvider() {
+        return Stream.of(
+                Arguments.of(0, null),
+                Arguments.of(0, ""),
+                Arguments.of(1, "1"),
+                Arguments.of(3, "1,2")
+        );
+    }
 
     @BeforeEach
     void setUp() {
-        helloWorld = new HelloWorld();
+        stringCalculator = new StringCalculator();
     }
 
     @ParameterizedTest()
