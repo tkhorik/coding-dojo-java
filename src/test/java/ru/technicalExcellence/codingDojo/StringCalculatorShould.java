@@ -1,7 +1,10 @@
 package ru.technicalExcellence.codingDojo;
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.*;
+
+import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -14,17 +17,9 @@ public class HelloWorldShould {
         helloWorld = new HelloWorld();
     }
 
-    @Test
-    void returnHelloWorld() {
-        final var expected = "Hello World";
-
-        final var actual = helloWorld.helloWorld();
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void return_0_when_empty_string_is_given() {
-        assertEquals(0, stringCalculator.add(""));
+    @ParameterizedTest()
+    @MethodSource("stringProvider")
+    void return_0_when_null_is_given(int expected, String value) {
+        assertEquals(expected, stringCalculator.add(value));
     }
 }
