@@ -23,4 +23,8 @@ public class HelloWorldShould {
         assertEquals(expected, actual);
     }
 
+    @Test
+    void return_0_when_empty_string_is_given() {
+        assertEquals(0, stringCalculator.add(""));
+    }
 }
